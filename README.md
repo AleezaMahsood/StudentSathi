@@ -74,7 +74,7 @@ student-saathi/
 
 1. Clone the repository:
 bash
-git clone https://github.com/yourusername/student-saathi.git
+git clone https://github.com/AleezaMahsood/StudentSathi.git
 cd student-saathi
 
 
