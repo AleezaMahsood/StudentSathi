@@ -1,0 +1,4 @@
+streamlit==1.31.1
+cohere==4.47
+python-dotenv==1.0.0
+PyPDF2==3.0.1 
