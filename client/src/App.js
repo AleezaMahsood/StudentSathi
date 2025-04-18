@@ -8,6 +8,7 @@ import JobDescription from './pages/JobDescription';
 import QuizGenerator from './components/QuizGenerator'
 import CoverLetter from './pages/CoverLetter';
 import Home from './pages/Home';
+import MentalHealthPage from './pages/MentalHealthPage';
 
 const theme = createTheme({
   palette: {
@@ -24,6 +25,22 @@ const theme = createTheme({
   typography: {
     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
   },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: 8,
+        },
+      },
+    },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          borderRadius: 12,
+        },
+      },
+    },
+  },
 });
 
 function App() {
@@ -38,6 +55,7 @@ function App() {
             <Route path="job-description" element={<JobDescription />} />
             <Route path="cover-letter" element={<CoverLetter />} />
             <Route path="quiz-generator" element={<QuizGenerator />} />
+            <Route path="mental-health" element={<MentalHealthPage />} />
           </Route>
         </Routes>
       </Router>
