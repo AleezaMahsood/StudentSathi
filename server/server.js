@@ -217,6 +217,88 @@ app.post('/api/generate-quiz', upload.single('notes'), async (req, res) => {
     }
 });
 
+// Mood Analysis endpoint
+app.post('/api/analyze-mood', async (req, res) => {
+    try {
+        const { text } = req.body;
+        
+        const prompt = `As an empathetic AI counselor, analyze this message and provide a supportive, encouraging response. Consider the emotional state and offer appropriate guidance or comfort.
+
+        User's message: ${text}
+
+        Respond in a warm, understanding tone and keep the response concise (2-3 sentences).`;
+
+        const response = await cohere.generate({
+            prompt: prompt,
+            max_tokens: 150,
+            temperature: 0.7,
+            k: 0,
+            stop_sequences: [],
+            return_likelihoods: 'NONE'
+        });
+
+        res.json({ response: response.body.generations[0].text.trim() });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+// Study Break Suggestion endpoint
+app.post('/api/generate-break', async (req, res) => {
+    try {
+        const prompt = `Generate a short, practical mindfulness or study break suggestion that:
+        1. Takes 2-5 minutes
+        2. Helps reduce stress and improve focus
+        3. Can be done at a study desk
+        4. Is specific and actionable
+        
+        Format the response as a single paragraph (2-3 sentences).`;
+
+        const response = await cohere.generate({
+            prompt: prompt,
+            max_tokens: 100,
+            temperature: 0.7,
+            k: 0,
+            stop_sequences: [],
+            return_likelihoods: 'NONE'
+        });
+
+        res.json({ suggestion: response.body.generations[0].text.trim() });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+// Motivation Generator endpoint
+app.post('/api/generate-motivation', async (req, res) => {
+    try {
+        const { context } = req.body;
+        
+        const prompt = `Generate a personalized motivational message for a student with this context: ${context || 'studying and working towards their goals'}
+
+        The message should be:
+        1. Personal and specific to their context
+        2. Encouraging and positive
+        3. Action-oriented
+        4. Concise (2-3 sentences)
+
+        Make it sound natural and inspiring, not cliché.`;
+
+        const response = await cohere.generate({
+            prompt: prompt,
+            max_tokens: 150,
+            temperature: 0.7,
+            k: 0,
+            stop_sequences: [],
+            return_likelihoods: 'NONE'
+        });
+
+        res.json({ message: response.body.generations[0].text.trim() });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
 // Start server
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
