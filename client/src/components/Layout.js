@@ -22,6 +22,7 @@ import {
   Home as HomeIcon,
   Quiz as QuizIcon,
 } from '@mui/icons-material';
+import SentimentVerySatisfiedIcon from '@mui/icons-material/SentimentVerySatisfied';
 
 const drawerWidth = 240;
 
@@ -40,6 +41,7 @@ function Layout() {
     { text: 'Job Description', icon: <WorkIcon />, path: '/job-description' },
     { text: 'Cover Letter', icon: <EmailIcon />, path: '/cover-letter' },
     { text: 'Quiz Generator', icon: <QuizIcon />, path: '/quiz-generator' },
+    { text: 'Mental Health', icon: <SentimentVerySatisfiedIcon />, path: '/mental-health' },
   ];
 
   const drawer = (

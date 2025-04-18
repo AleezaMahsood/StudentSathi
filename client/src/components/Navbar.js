@@ -22,13 +22,13 @@ import { Link as RouterLink } from 'react-router-dom';
 import DescriptionIcon from '@mui/icons-material/Description';
 import WorkIcon from '@mui/icons-material/Work';
 import QuizIcon from '@mui/icons-material/Quiz';
-import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt';
+import SentimentVerySatisfiedIcon from '@mui/icons-material/SentimentVerySatisfied';
 
 const pages = [
   { name: 'CV Analysis', path: '/cv-analysis', icon: <DescriptionIcon /> },
   { name: 'Job Description', path: '/job-description', icon: <WorkIcon /> },
   { name: 'Quiz Generator', path: '/quiz-generator', icon: <QuizIcon /> },
-  { name: 'Mental Health', path: '/mental-health', icon: <SentimentSatisfiedAltIcon /> },
+  { name: 'Mental Health', path: '/mental-health', icon: <SentimentVerySatisfiedIcon /> },
 ];
 
 const Navbar = () => {
