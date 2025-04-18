@@ -217,6 +217,66 @@ app.post('/api/generate-quiz', upload.single('notes'), async (req, res) => {
     }
 });
 
+// Interview Questions Generator endpoint
+app.post('/api/interview-questions', async (req, res) => {
+    try {
+        const { jobDescription, difficulty, questionType } = req.body;
+        
+        if (!jobDescription || !difficulty || !questionType) {
+            return res.status(400).json({ error: 'Missing required fields' });
+        }
+
+        console.log('Received request:', { difficulty, questionType });
+        
+        let prompt =`Generate 5 ${difficulty} level ${questionType} interview questions based on the following job description:\n\n${jobDescription}\n\n`;
+        
+        if (questionType === 'technical') {
+            prompt += "Focus on technical skills and knowledge required for the role.";
+        } else if (questionType === 'behavioral') {
+            prompt += "Focus on behavioral aspects and personality traits.";
+        } else if (questionType === 'situational') {
+            prompt += "Focus on situational questions that can be answered using the STAR method (Situation, Task, Action, Result).";
+        }
+
+        console.log('Sending prompt to Cohere:', prompt);
+
+        try {
+            const response = await cohere.generate({
+                prompt: prompt,
+                max_tokens: 500,
+                temperature: 0.7,
+                k: 0,
+                stop_sequences: [],
+                return_likelihoods: 'NONE'
+            });
+
+            console.log('Cohere response:', response);
+
+            if (!response.body || !response.body.generations || !response.body.generations[0]) {
+                throw new Error('Invalid response format from Cohere API');
+            }
+
+            const questions = response.body.generations[0].text
+                .split('\n')
+                .filter(q => q.trim() !== '')
+                .map(q => q.replace(/^\d+\.\s*/, '').trim());
+
+            res.json({ questions });
+        } catch (cohereError) {
+            console.error('Cohere API Error:', cohereError);
+            throw new Error(`Cohere API Error:", ${cohereError.message}`);
+        }
+    } catch (error) {
+        console.error('Detailed error:', error);
+        console.error('Error message:', error.message);
+        console.error('Error stack:', error.stack);
+        res.status(500).json({ 
+            error: 'Failed to generate questions',
+            details: error.message 
+        });
+    }
+});
+
 // Mood Analysis endpoint
 app.post('/api/analyze-mood', async (req, res) => {
     try {

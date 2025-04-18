@@ -9,6 +9,7 @@ import QuizGenerator from './components/QuizGenerator'
 import CoverLetter from './pages/CoverLetter';
 import Home from './pages/Home';
 import MentalHealthPage from './pages/MentalHealthPage';
+import InterviewQuestions from './pages/InterviewQuestions';
 
 const theme = createTheme({
   palette: {
@@ -56,6 +57,7 @@ function App() {
             <Route path="cover-letter" element={<CoverLetter />} />
             <Route path="quiz-generator" element={<QuizGenerator />} />
             <Route path="mental-health" element={<MentalHealthPage />} />
+            <Route path="interview-questions" element={<InterviewQuestions />} />
           </Route>
         </Routes>
       </Router>

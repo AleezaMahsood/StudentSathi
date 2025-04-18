@@ -21,6 +21,7 @@ import {
   Email as EmailIcon,
   Home as HomeIcon,
   Quiz as QuizIcon,
+  QuestionAnswer as QuestionAnswerIcon
 } from '@mui/icons-material';
 import SentimentVerySatisfiedIcon from '@mui/icons-material/SentimentVerySatisfied';
 
@@ -41,6 +42,7 @@ function Layout() {
     { text: 'Job Description', icon: <WorkIcon />, path: '/job-description' },
     { text: 'Cover Letter', icon: <EmailIcon />, path: '/cover-letter' },
     { text: 'Quiz Generator', icon: <QuizIcon />, path: '/quiz-generator' },
+    { text: 'Interview Questions', icon: <QuestionAnswerIcon />, path: '/interview-questions' },
     { text: 'Mental Health', icon: <SentimentVerySatisfiedIcon />, path: '/mental-health' },
   ];
 
