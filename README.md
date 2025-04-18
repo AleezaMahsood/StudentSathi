@@ -1,6 +1,6 @@
-# Student Saathi - AI-Powered Career Assistant
+# Student Sathi - AI-Powered Student's Career Assistant
 
-Student Saathi is a comprehensive web application designed to assist students in their career development journey. It provides various AI-powered tools to help with CV analysis, interview preparation, cover letter generation, quiz creation, and mental health support.
+Student Sathi is a comprehensive web application designed to assist students in their career development journey. It provides various AI-powered tools to help with CV analysis, interview preparation, cover letter generation, quiz creation, and mental health support.
 
 ## Features
 
@@ -51,36 +51,14 @@ Student Saathi is a comprehensive web application designed to assist students in
 - PDF-parse for PDF text extraction
 - Multer for file uploads
 
-## Project Structure
-
-
-student-saathi/
-├── client/                 # Frontend React application
-│   ├── src/
-│   │   ├── components/    # Reusable UI components
-│   │   ├── pages/        # Page components
-│   │   ├── App.js        # Main application component
-│   │   └── index.js      # Entry point
-│   └── package.json      # Frontend dependencies
-│
-├── server/                # Backend Node.js application
-│   ├── server.js         # Main server file
-│   └── package.json      # Backend dependencies
-│
-└── package.json          # Root project configuration
-
-
 ## Setup Instructions
 
 1. Clone the repository:
 bash
 git clone https://github.com/AleezaMahsood/StudentSathi.git
-cd student-saathi
-
 
 2. Install dependencies:
-bash
-npm run install-all
+`npm run install-all`
 
 
 3. Set up environment variables:
@@ -91,9 +69,7 @@ npm run install-all
    
 
 4. Start the development servers:
-bash
-npm start
-
+`npm start`
 
 The application will be available at:
 - Frontend: http://localhost:3000
@@ -124,3 +100,13 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Cohere AI for providing the natural language processing capabilities
 - Material-UI for the beautiful UI components
 - The open-source community for various tools and libraries used in this project
+
+## Achievements
+
+### Gen AI Creathon Hackathon Winner- TECHFEST 2025
+
+We are proud to announce that Student Sathi was developed as part of the Gen AI Creathon Hackathon, organized by AI Alliance during TECHFEST 2025 at NED University. This event was a free-form innovation challenge that encouraged participants to experiment with generative AI technologies to create something creative, useful, or surprising.
+
+Our team participated in this hackathon and emerged victorious, showcasing the unique capabilities of Student Sathi. The application was judged on its novelty, impact, relevance, and feasibility, and it stood out among numerous entries for its innovative approach to assisting students in their career development journey.
+
+The hackathon allowed us to push the boundaries of generative AI and create a product that not only solves real-world problems but also supports students in a meaningful way.

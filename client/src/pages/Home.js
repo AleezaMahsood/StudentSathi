@@ -25,30 +25,48 @@ function Home() {
       icon: <DescriptionIcon sx={{ fontSize: 60, color: '#2c3e50' }} />,
       path: '/cv-analysis',
     },
-    {
-      title: 'Job Description Generator',
-      description: 'Generate comprehensive job descriptions for any role by specifying the position and required experience.',
-      icon: <WorkIcon sx={{ fontSize: 60, color: '#2c3e50' }} />,
-      path: '/job-description',
-    },
+    // {
+    //   title: 'Job Description Generator',
+    //   description: 'Generate comprehensive job descriptions for any role by specifying the position and required experience.',
+    //   icon: <WorkIcon sx={{ fontSize: 60, color: '#2c3e50' }} />,
+    //   path: '/job-description',
+    // },
     {
       title: 'Cover Letter Creator',
       description: 'Create personalized cover letters by combining your CV with job requirements and company information.',
       icon: <EmailIcon sx={{ fontSize: 60, color: '#2c3e50' }} />,
       path: '/cover-letter',
     },
+    {
+      title: 'Interview Questions',
+      description: 'Prepare for your interviews with a curated list of common questions and expert tips.',
+      icon: <WorkIcon sx={{ fontSize: 60, color: '#2c3e50' }} />,
+      path: '/interview-questions',
+    },
+    {
+      title: 'Mental Health',
+      description: 'Access resources and tools to help manage stress and maintain mental well-being.',
+      icon: <EmailIcon sx={{ fontSize: 60, color: '#2c3e50' }} />,
+      path: '/mental-health',
+    },
+    {
+      title: 'Quiz Generator',
+      description: 'Create and take quizzes to test your knowledge on various subjects.',
+      icon: <DescriptionIcon sx={{ fontSize: 60, color: '#2c3e50' }} />,
+      path: '/quiz-generator',
+    },
   ];
 
   return (
     <Box sx={{ maxWidth: 1200, mx: 'auto', mt: 4 }}>
       <Typography variant="h3" gutterBottom align="center">
-        Welcome to Student Saathi
+        Welcome to Student Sathi
       </Typography>
       <Typography variant="h5" paragraph align="center" color="text.secondary">
         Your AI-powered career assistant
       </Typography>
 
-      <Grid container spacing={4} sx={{ mt: 2 }}>
+      <Grid container spacing={4} sx={{ mt: 2, justifyContent: 'center', alignItems: 'center' }}>
         {features.map((feature) => (
           <Grid item xs={12} md={4} key={feature.title}>
             <Card
@@ -99,8 +117,9 @@ function Home() {
           How It Works
         </Typography>
         <Typography variant="body1" color="text.secondary" paragraph>
-          Student Saathi uses advanced AI to help you create professional documents and get valuable feedback for your career journey.
-          Simply choose a tool, provide the required information, and let our AI assist you in creating high-quality career documents.
+          Student Sathi leverages cutting-edge AI technology to assist you in crafting professional documents and receiving insightful feedback for your career development. 
+          Whether you're looking to analyze your CV, generate job descriptions, create cover letters, prepare for interviews, take quizzes, or access mental health resources, our tools are designed to streamline the process. 
+          Simply select a feature, input the necessary details, and let our AI guide you in producing high-quality career documents and resources tailored to your needs.
         </Typography>
       </Box>
     </Box>

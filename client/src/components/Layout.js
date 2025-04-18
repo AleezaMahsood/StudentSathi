@@ -39,7 +39,7 @@ function Layout() {
   const menuItems = [
     { text: 'Home', icon: <HomeIcon />, path: '/' },
     { text: 'CV Analysis', icon: <DescriptionIcon />, path: '/cv-analysis' },
-    { text: 'Job Description', icon: <WorkIcon />, path: '/job-description' },
+    // { text: 'Job Description', icon: <WorkIcon />, path: '/job-description' },
     { text: 'Cover Letter', icon: <EmailIcon />, path: '/cover-letter' },
     { text: 'Quiz Generator', icon: <QuizIcon />, path: '/quiz-generator' },
     { text: 'Interview Questions', icon: <QuestionAnswerIcon />, path: '/interview-questions' },
@@ -101,7 +101,7 @@ function Layout() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Student Saathi
+            Student Sathi
           </Typography>
         </Toolbar>
       </AppBar>
