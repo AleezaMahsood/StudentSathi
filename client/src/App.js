@@ -5,6 +5,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Layout from './components/Layout';
 import CVAnalysis from './pages/CVAnalysis';
 import JobDescription from './pages/JobDescription';
+import QuizGenerator from './components/QuizGenerator'
 import CoverLetter from './pages/CoverLetter';
 import Home from './pages/Home';
 
@@ -36,6 +37,7 @@ function App() {
             <Route path="cv-analysis" element={<CVAnalysis />} />
             <Route path="job-description" element={<JobDescription />} />
             <Route path="cover-letter" element={<CoverLetter />} />
+            <Route path="quiz-generator" element={<QuizGenerator />} />
           </Route>
         </Routes>
       </Router>

@@ -20,6 +20,7 @@ import {
   Work as WorkIcon,
   Email as EmailIcon,
   Home as HomeIcon,
+  Quiz as QuizIcon,
 } from '@mui/icons-material';
 
 const drawerWidth = 240;
@@ -38,6 +39,7 @@ function Layout() {
     { text: 'CV Analysis', icon: <DescriptionIcon />, path: '/cv-analysis' },
     { text: 'Job Description', icon: <WorkIcon />, path: '/job-description' },
     { text: 'Cover Letter', icon: <EmailIcon />, path: '/cover-letter' },
+    { text: 'Quiz Generator', icon: <QuizIcon />, path: '/quiz-generator' },
   ];
 
   const drawer = (
