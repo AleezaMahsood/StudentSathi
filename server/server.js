@@ -128,6 +128,95 @@ app.post('/api/generate-cover-letter', upload.single('cv'), async (req, res) => 
     }
 });
 
+// Quiz Generator endpoint
+app.post('/api/generate-quiz', upload.single('notes'), async (req, res) => {
+    try {
+        const notesText = await extractTextFromPDF(req.file.buffer);
+        const { quizType } = req.body;
+        
+        const systemPrompt = `You are a quiz generator that ONLY outputs valid JSON arrays. 
+        Your response must start with '[' and end with ']'.
+        Do not include any other text or explanation.`;
+        
+        let prompt = '';
+        switch (quizType) {
+            case 'multiple-choice':
+                prompt = `${systemPrompt}
+                Generate 5 multiple choice questions based on these notes:
+                ${notesText}
+                
+                Each question must follow this EXACT format:
+                {
+                  "question": "Write the question here?",
+                  "options": ["First option", "Second option", "Third option", "Fourth option"],
+                  "answer": "The correct option text",
+                  "explanation": "Brief explanation of the answer"
+                }`;
+                break;
+            case 'fill-blanks':
+                prompt = `${systemPrompt}
+                Generate 5 fill-in-the-blank questions based on these notes:
+                ${notesText}
+                
+                Each question must follow this EXACT format:
+                {
+                  "question": "Complete sentence with _____ for the blank",
+                  "answer": "The word that goes in the blank",
+                  "explanation": "Brief explanation of why this is correct"
+                }`;
+                break;
+            case 'short-answer':
+                prompt = `${systemPrompt}
+                Generate 5 short answer questions based on these notes:
+                ${notesText}
+                
+                Each question must follow this EXACT format:
+                {
+                  "question": "Write the question here?",
+                  "answer": "The correct answer",
+                  "explanation": "Brief explanation of the answer"
+                }`;
+                break;
+            default:
+                throw new Error('Invalid quiz type');
+        }
+
+        const response = await cohere.generate({
+            prompt: prompt,
+            max_tokens: 1000,
+            temperature: 0.7,
+            k: 0,
+            stop_sequences: ['\n\n'],
+            return_likelihoods: 'NONE'
+        });
+
+        // Clean and parse the response
+        let responseText = response.body.generations[0].text.trim();
+        
+        // Remove any markdown code blocks or extra text
+        responseText = responseText.replace(/```json\n?|\n?```/g, '').trim();
+        
+        // Ensure the response starts with [ and ends with ]
+        if (!responseText.startsWith('[') || !responseText.endsWith(']')) {
+            console.error('Invalid response format:', responseText);
+            throw new Error('Invalid response format from AI');
+        }
+
+        // Parse the JSON
+        const questions = JSON.parse(responseText);
+
+        // Validate the questions array
+        if (!Array.isArray(questions) || questions.length === 0) {
+            throw new Error('Invalid questions format: expected non-empty array');
+        }
+
+        res.json({ questions });
+    } catch (error) {
+        console.error('Quiz generation error:', error);
+        res.status(500).json({ error: error.message });
+    }
+});
+
 // Start server
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
