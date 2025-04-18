@@ -48,7 +48,18 @@ function Layout() {
 
   const drawer = (
     <div>
-      <Toolbar />
+      <Toolbar sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', py: 2 }}>
+        <Box
+          component="img"
+          src={process.env.PUBLIC_URL + '/logo.png'}
+          alt="Student Sathi Logo"
+          sx={{
+            width: '100%',
+            height: 'auto',
+            px: 2
+          }}
+        />
+      </Toolbar>
       <List>
         {menuItems.map((item) => (
           <ListItem

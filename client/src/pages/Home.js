@@ -13,6 +13,7 @@ import {
   Description as DescriptionIcon,
   Work as WorkIcon,
   Email as EmailIcon,
+  QuestionAnswer as QuestionAnswerIcon,
 } from '@mui/icons-material';
 
 function Home() {
@@ -52,7 +53,7 @@ function Home() {
     {
       title: 'Quiz Generator',
       description: 'Create and take quizzes to test your knowledge on various subjects.',
-      icon: <DescriptionIcon sx={{ fontSize: 60, color: '#2c3e50' }} />,
+      icon: <QuestionAnswerIcon sx={{ fontSize: 60, color: '#2c3e50' }} />,
       path: '/quiz-generator',
     },
   ];
