@@ -1,0 +1,12 @@
+{
+  "name": "student-saathi",
+  "version": "1.0.0",
+  "description": "Student Saathi - AI-powered career assistant",
+  "scripts": {
+    "start": "concurrently \"cd server && npm run dev\" \"cd client && npm start\"",
+    "install-all": "npm install && cd server && npm install && cd ../client && npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+} 
