@@ -100,15 +100,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Material-UI for the beautiful UI components
 - The open-source community for various tools and libraries used in this project
 
-## Achievements
-
-### Gen AI Creathon Hackathon Winner- TECHFEST 2025
-
-We are proud to announce that Student Sathi was developed as part of the Gen AI Creathon Hackathon, organized by AI Alliance during TECHFEST 2025 at NED University. This event was a free-form innovation challenge that encouraged participants to experiment with generative AI technologies to create something creative, useful, or surprising.
-
-Our team participated in this hackathon and emerged victorious, showcasing the unique capabilities of Student Sathi. The application was judged on its novelty, impact, relevance, and feasibility, and it stood out among numerous entries for its innovative approach to assisting students in their career development journey.
-
-The hackathon allowed us to push the boundaries of generative AI and create a product that not only solves real-world problems but also supports students in a meaningful way.
-
 ## App Screen Recording
 https://github.com/user-attachments/assets/0c15fe63-66cb-4aca-8430-05d4994ff296
