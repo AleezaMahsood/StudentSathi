@@ -54,27 +54,21 @@ Student Sathi is a versatile and user-friendly web application designed to assis
 ## Setup Instructions
 
 1. Clone the repository:
-**```bash
-git clone https://github.com/AleezaMahsood/StudentSathi.git
-**
+`git clone https://github.com/AleezaMahsood/StudentSathi.git`
 
 2. Install dependencies:
-**```bash
-npm run install-all
-```**
+`npm run install-all`
 
 
-4. Set up environment variables:
-   - Create a **`.env`** file in the **`server`** directory
+3. Set up environment variables:
+   - Create a .env file in the server directory
    - Add your Cohere API key:
-   **```
+   
    COHERE_API_KEY=your_api_key_here
-   ```**
+   
 
-5. Start the development servers:
-**```bash
+4. Start the development servers:
 `npm start`
-```**
 
 The application will be available at:
 - Frontend: http://localhost:3000
