@@ -1,6 +1,6 @@
 # Student Sathi - AI-Powered Student's Career Assistant
 
-Student Sathi is a comprehensive web application designed to assist students in their career development journey. It provides various AI-powered tools to help with CV analysis, interview preparation, cover letter generation, quiz creation, and mental health support.
+Student Sathi is a versatile and user-friendly web application designed to assist students in their career development journey. It provides various AI-powered tools to help with CV analysis, interview preparation, cover letter generation, quiz creation, and mental health support.
 
 ## Features
 
@@ -33,7 +33,7 @@ Student Sathi is a comprehensive web application designed to assist students in 
 - Mood analysis and support
 - Get empathetic responses to your concerns
 - Receive encouraging guidance
-- Access study break suggestions
+- Access study break suggestions and mindfulness tips
 
 ## Tech Stack
 
@@ -54,7 +54,9 @@ Student Sathi is a comprehensive web application designed to assist students in 
 ## Setup Instructions
 
 1. Clone the repository:
+**```bash
 `git clone https://github.com/AleezaMahsood/StudentSathi.git`
+```**
 
 2. Install dependencies:
 `npm run install-all`
